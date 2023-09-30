@@ -1,11 +1,10 @@
 package com.hibernate;
 
+import java.util.Date;
+
 import org.hibernate.*;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
@@ -25,13 +24,16 @@ public class App {
 		SessionFactory factory3 = HibernateUtil.getSessionFactory();
 		System.out.println(factory3);
 		
-		Student st = new Student(007, "Gokku","goku@gmail.com","Male");
+		//Student st = new Student(007, "Gokku","goku@gmail.com","Male");
 		
-		Session session = factory3.openSession();
-		Transaction tx = session.beginTransaction();
-		session.save(st);
-		tx.commit();
-		session.close();
+		 Employee ep = new Employee("Gohan",3729239.2939,new Date(), "gohan@gmail.com",true, "vgjhbh");
+		
+		
+		 Session session = factory3.openSession();
+		 Transaction tx = session.beginTransaction();
+		 session.save(ep);
+		 tx.commit();
+		 session.close();
 		
 	}
 }
